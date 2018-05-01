@@ -5,41 +5,84 @@
 <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
 <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.1.0/dist/aframe-physics-system.min.js"></script>
-<a-scene vr-mode-ui="enabled: false" physics inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+<script src="https://rawgit.com/gasolin/aframe-href-component/master/dist/aframe-href-component.min.js"></script>
+<a-scene vr-mode-ui="enabled: false" raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
 <a-assets>
+    <%= image_tag 'tae.png', id: 'tae', class: 'img-responsive' %>
+    <%= image_tag 'soren.png', id: 'soren', class: 'img-responsive' %>
+    <%= image_tag 'ian.png', id: 'ian', class: 'img-responsive' %>
+    <%= image_tag 'sydney.png', id: 'sydney', class: 'img-responsive' %>
+    <%= image_tag 'nikhil.png', id: 'nikhil', class: 'img-responsive' %>
+    <%= image_tag 'riyanka.png', id: 'riyanka', class: 'img-responsive' %>
+    <%= image_tag 'gianna.png', id: 'gianna', class: 'img-responsive' %>
+    <%= image_tag 'ksenia.png', id: 'ksenia', class: 'img-responsive' %>
+    <%= image_tag 'jo.png', id: 'jo', class: 'img-responsive' %>
+    <%= image_tag 'eric.png', id: 'eric', class: 'img-responsive' %>
+    <%= image_tag 'cassidy.png', id: 'cassidy', class: 'img-responsive' %>
+    <%= image_tag 'angelina.png', id: 'angelina', class: 'img-responsive' %>
+    <%= image_tag 'kira.png', id: 'kira', class: 'img-responsive' %>
+    <%= image_tag 'skynoon.jpg', id: 'skybox', class: 'img-responsive' %>
+    <%= image_tag 'concrete.jpg', id: 'concrete', class: 'img-responsive' %>
 </a-assets>
 
-<!-- User -->
-<a-entity camera="userHeight: 3.6" position="6 0 0" universal-controls
-kinematic-body>
-</a-entity>
+    <!-- User-->
+   <!--<a-entity camera="userHeight: 3.6" position="6 0 0" universal-controls
+    kinematic-body>
+    </a-entity>
 
-<!-- Sky -->
-<a-sky src="images/sky_midafternoon.jpg" rotation="0 -130 0"></a-sky>
+    <a-entity position="0 1.8 4">
+      <a-camera>
+        <a-cursor color="#4CC3D9"></a-cursor>
+      <a-camera>
+    </a-entity>-->
 
-<!-- Light 
-<a-entity light="type:directional; " position="10 10 1"></a-entity>-->
+   <a-entity position="6 0 0">
+        <a-camera id="camera" look-controls wasd-controls>
+          <!-- <a-cursor color="#4CC3D9"></a-cursor> -->
+          <a-ring radius-outer="0.30" radius-inner="0.20"
+            position="0 0 -10"
+            material="color: cyan; shader: flat"
+            cursor="maxDistance: 30; fuse: true">
+          </a-ring>
+        </a-camera>
+      </a-entity>
 
+    <!-- Sky -->
+    <a-sky src="#skybox" rotation="0 -130 0"></a-sky>
 
-    <!-- Ground 
-    <a-grid static-body color="#000"></a-grid>-->
-    <a-plane  static-body src="#ground" color="#FFF" height="12" width="20" rotation="-90 0 0" position="9.3 0 0"></a-plane>
-
-    <!-- Ceiling 
-    <a-box  static-body  color="#FFF" height="12" width="20" depth="1" rotation="-90 0 0" position="9.3 6 0"></a-box>-->
-
+    <!-- Ground -->
+    <a-plane  static-body src="#ground" src="#concrete" height="12" width="20" rotation="-90 0 0" position="9.3 0 0"></a-plane>
 
     <!-- Walls -->
-    <a-box  color="#FFF" width="15" height="5" depth="1" position="8 2.5 -5" static-body ></a-box>
-    <a-box  color="#FFF" width="15" height="5" depth="1" position="8 2.5 5" static-body></a-box>
-    <a-box  color="#FFF" width="10" height="5" depth="1" rotation="0 90 0" position="14 2.5 0" static-body></a-box>
-    <a-box  color="#FFF" width="10" height="5" depth="1" rotation="0 90 0" position="0 2.5 0" static-body></a-box>
+    <a-box  href="http://aframe.io/" color="#FFF" width="15" height="5" depth="1" position="8 2.5 -5" static-body ></a-box>
+    <a-box  href="http://aframe.io/" color="#FFF" width="15" height="5" depth="1" position="8 2.5 5" static-body></a-box>
+    <a-box  href="http://aframe.io/" color="#FFF" width="10" height="5" depth="1" rotation="0 90 0" position="14 2.5 0" static-body></a-box>
+    <a-box  href="http://aframe.io/" color="#FFF" width="10" height="5" depth="1" rotation="0 90 0" position="0 2.5 0" static-body></a-box>
+
+    <!-- Links -->
+    <!--right wall-->
+    <a-link href="https://ksenia007.github.io/emoji/" title="Ksenia" width="4" height="3" rotation="0 90 0" position="13.3 2 -3" image="#ksenia" peekMode="true"></a-link>
+    <a-link href="https://taecata.github.io/PROJECT-3/" title="Tae" width="4" height="3" rotation="0 90 0" position="13.3 2 0" image="#tae"></a-link>
+    <a-link href="https://gmo8.github.io/Dinosaur-/"  title="Gianna" width="4" height="3" rotation="0 90 0" position="13.3 2 3" image="#gianna"></a-link>
+    <!--back wall-->
+    <a-link href="https://xh47.github.io/InteractiveGraphicsFinalProject/" title="Ian" width="5" height="3" rotation="0 0 0" position="3 2 4.45" image="#ian"></a-link>
+    <a-link href="https://sydneymcauliffe.github.io/Data-vis/"  title="Sydney" width="4" height="3" rotation="0 0 0" position="6 2 4.45" image="#sydney"></a-link>
+    <a-link href="https://nikhilvdk.github.io/MusicVis/"  title="Nikhil" width="4" height="3" rotation="0 0 0" position="9 2 4.45" image="#nikhil"></a-link>
+    <a-link href="https://riyankag.github.io/Data-Visualization-Final/"  title="Riyanka" width="4" height="3" rotation="0 0 0" position="12 2 4.45" image="#riyanka"></a-link>
+    <!--front wall-->
+    <a-link href="https://sorenchargois.github.io/DeStijl-interactive/" title="Soren" width="4" height="3"  rotation="0 0 0" position="8 2 -4.45" image="#soren"></a-link>
+    <a-link href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html" title="Jo" width="4" height="3"  rotation="0 0 0" position="11 2 -4.45" image="#jo"></a-link>
+    <a-link href="https://bobobocuz.github.io/artsvis_visualization/" title="Eric" width="4" height="3"  rotation="0 0 0" position="5 2 -4.45" image="#eric"></a-link>
+    <a-link href="https://cassidybolt.github.io/Cassidy-s-Data-Visualization/" title="Cassidy" width="4" height="3"  rotation="0 0 0" position="2 2 -4.45" image="#cassidy"></a-link>
+    <!--left wall-->
+    <a-link href="https://geli25.github.io/Assignment3/"  title="Angelina" width="4" height="3" rotation="0 90 0" position="0.8 2 3" image="#angelina"></a-link>
+    <a-link href="https://kiraxie17.github.io/DataVisualization_version1/"  title="Kira" width="4" height="3" rotation="0 90 0" position="0.8 2 0" image="#kira"></a-link>
+    <a-link href="https://geli25.github.io/Assignment3/"  title="Paschalia" width="4" height="3" rotation="0 90 0" position="0.8 2 -3" image="#angelina"></a-link>
     
 
-
     <!-- Pedestals -->
-    <a-box  static-body color="#FFF" width="0.6" height="2" width="0.6" position="10 0 0"></a-box >
-    <a-box  static-body color="#FFF" width="0.8" height="2" width="0.8" position="8 0 4"></a-box >
-    <a-box  static-body color="#FFF" width="0.8" height="2" width="0.8" position="4 0 -4"></a-box >
+    <a-box  href="http://aframe.io/"  static-body color="#FFF" width="0.6" height="2" width="0.6" position="10 0 0"></a-box >
+    <a-box  href="http://aframe.io/"  static-body color="#FFF" width="0.8" height="2" width="0.8" position="8 0 4"></a-box >
+    <a-box  href="http://aframe.io/"  static-body color="#FFF" width="0.8" height="2" width="0.8" position="4 0 -4"></a-box >
 </a-scene>
 
