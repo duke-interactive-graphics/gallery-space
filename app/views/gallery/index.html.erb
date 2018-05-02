@@ -6,6 +6,7 @@
 <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.1.0/dist/aframe-physics-system.min.js"></script>
 <a-scene vr-mode-ui="enabled: false" raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
 <a-assets>
+    <%= image_tag 'showcase.png', id: 'showcase', class: 'img-responsive' %>
     <%= image_tag 'tae.png', id: 'tae', class: 'img-responsive' %>
     <%= image_tag 'soren.png', id: 'soren', class: 'img-responsive' %>
     <%= image_tag 'ian.png', id: 'ian', class: 'img-responsive' %>
@@ -60,9 +61,17 @@
     <a-box  color="#FFF" width="10" height="5" depth="1" rotation="0 90 0" position="14 2.5 0" static-body></a-box>
     <a-box  color="#FFF" width="10" height="5" depth="1" rotation="0 90 0" position="0 2.5 0" static-body></a-box>
 
+     <!-- Pedestals -->
+    <a-box  static-body color="#FFF" width="0.6" height="2" width="0.6" position="10 0 0"></a-box >
+
+    <!-- Menu -->
+    <a-text href="https://dukeinteractivegraphics.herokuapp.com/landing/about" value="About the Artists" size="30" width="0.3" height="0.4" color="black" rotation="270 0 270" position="10 1.08 -0.2"></a-text>
+    <a-box  href="https://dukeinteractivegraphics.herokuapp.com/landing/about" color="#FFF" width="0.08" height="0.05" depth="0.2" position="10 1.05 -0.15" static-body ></a-box>
+    <a-image href="https://dukeinteractivegraphics.herokuapp.com/landing/about/" title="Showcase" width="0.3" height="0.4" rotation="270 0 270" position="10 1.05 0.2" src="#showcase"></a-image>
+
     <!-- Links -->
     <!--right wall-->
-    <a-image href="https://ksenia007.github.io/emoji/" title="Ksenia" width="2" height="1" rotation="0 270 0" position="13.3 2 -3" src="#ksenia" peekMode="true"></a-image>
+    <a-image href="https://ksenia007.github.io/emoji/" title="Ksenia" width="2" height="1" rotation="0 270 0" position="13.3 2 -3" src="#ksenia"></a-image>
     <a-image href="https://taecata.github.io/PROJECT-3/" title="Tae" width="2" height="1" rotation="0 270 0" position="13.3 2 0" src="#tae"></a-image>
     <a-image href="https://gmo8.github.io/Dinosaur-/"  title="Gianna" width="2" height="1" rotation="0 270 0" position="13.3 2 3" src="#gianna"></a-image>
     <!--back wall-->

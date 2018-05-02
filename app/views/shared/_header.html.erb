@@ -14,24 +14,24 @@
         </li>
       </div>
 
+        <li class="nav-item">
+          <a><%= link_to "Artists", landing_about_path, class: "nav-link"%><a>
+        </li>
+
        <li class="nav-item">
           <a><%= link_to "Guest Book", guests_path, class: "nav-link"%><a>
         </li>
+
+
+
 
         <li class="nav-item">
           <a><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %></a>
         </li>
 
 
+
       <% else %>
-        <li class="nav-item">
-          <a><%= link_to "About", landing_about_path, class: "nav-link"%><a>
-        </li>
-
-        <li class="nav-item">
-          <a><%= link_to "Facts", landing_facts_path, class: "nav-link"%><a>
-        </li>
-
         <li class="nav-item">
           <a><%= link_to "Login", new_user_session_path, class: "nav-link"%><a>
         </li>

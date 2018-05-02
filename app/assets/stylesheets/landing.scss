@@ -17,8 +17,8 @@
   
   header.masthead {
     position: relative;
-    background-color: #343a40;
-    background: url("graphics.png") no-repeat center center;
+    background-color: #FFF;
+    background: url("gallery.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -27,14 +27,15 @@
     padding-bottom: 8rem; }
     header.masthead .overlay {
       position: absolute;
-      background-color: #212529;
+      background-color: #FFF;
       height: 100%;
       width: 100%;
       top: 0;
       left: 0;
       opacity: 0.3; }
     header.masthead h1 {
-      font-size: 2rem; }
+      color: #212529;
+      font-size: 30pt; }
     @media (min-width: 768px) {
       header.masthead {
         padding-top: 12rem;
